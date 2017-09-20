@@ -17,7 +17,7 @@ public class Main {
                 f3=m%10;
                 f4=m/10;
                 if ((f1==f3&&f2==f4)||(f1==f4&&f2==f3)){
-                    System.out.println(f2+f1+":"+f4+f3);
+                    System.out.println(f2+""+f1+":"+f4+""+f3);
                     coin = coin+1;
                 }
             }
