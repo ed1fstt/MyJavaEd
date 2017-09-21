@@ -1,43 +1,36 @@
 /**
  * Created by shamil on 18.09.2017.
  */
-//electronic watches coincidence task 15
+//unlucky numbers task 16
 public class Main {
-
+    private static boolean f4(int num){
+        boolean rez = false;
+        int tnum=0;
+        String s = String.valueOf(num);
+        if (s.indexOf('1')!=-1&s.indexOf('1')+1==s.indexOf('3')){
+                //||s.indexOf('1')+2==s.indexOf('3')||s.indexOf('1')+3==s.indexOf('3')||s.indexOf('1')+4==s.indexOf('3'))){
+            rez = true;
+        }
+        while (num!=0){
+            tnum=num%10;
+            num=num/10;
+            if (tnum == 4){
+                rez = true;
+                break;}
+        }
+        return rez;
+    }
     public static void main(String[] args) {
-        int coin = 0;
-        int f1 =0;
-        int f2=0;
-        int f3=0;
-        int f4=0;
-        for (int i=0;i<=23;i++){
-            f1=i%10;
-            f2=i/10;
-            for (int m=0;m<=59;m++){
-                f3=m%10;
-                f4=m/10;
-                if ((f1==f3&&f2==f4)||(f1==f4&&f2==f3)){
-                    System.out.println(f2+""+f1+":"+f4+""+f3);
-                    coin = coin+1;
-                }
+//        int unA  =13;
+//        int unJ = 4;
+        int qtt = 0;
+        for(int i=1; i<=99999;i++){
+            //4
+            if (f4(i)){
+                System.out.println(i);
+                qtt=qtt+1;
             }
         }
-        System.out.println(coin);
+        System.out.println(qtt);
     }
 }
-//00:00
-//        01:10
-//        02:20
-//        03:30
-//        04:40
-//        05:50
-//        10:01
-//        11:11
-//        12:21
-//        13:31
-//        14:41
-//        15:51
-//        20:02
-//        21:12
-//        22:22
-//        23:32
