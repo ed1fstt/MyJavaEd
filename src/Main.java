@@ -2,29 +2,19 @@
  * Created by shamil on 03.10.2017
  * */
 
-//simple array tricks #8
+//simple array tricks #9
 public class Main {
 
     public static void main(String[] args) {
-        int n=12;
-        int m=0;
-        int mi=0;
-        int[] arr = new int[n];
-        for (int i=0; i<n;i++){
-            arr[i] =(int)Math.floor(Math.random()*31-15);
-            System.out.print(arr[i]+" ");
-        }
-        m=arr[0];
-        mi=0;
+        int n=10;
+        int[] arr1 = new int[n];
+        int[] arr2 = new int[n];
+        double[] arr3 = new double[n];
         for (int i=0;i<n;i++){
-            if (arr[i]>m){
-                m=arr[i];
-                mi=i;
-            }
+            arr1[i] =(int)Math.floor(Math.random()*9+1);
+            arr2[i] =(int)Math.floor(Math.random()*9+1);
+            arr3[i] = arr1/arr2;
         }
-        System.out.println();
-        System.out.print(m);
-        System.out.println();
-        System.out.print(mi);
+
     }
 }
