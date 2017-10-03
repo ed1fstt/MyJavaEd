@@ -1,53 +1,42 @@
-import java.lang.reflect.Array;
-import java.text.DecimalFormat;
-import java.util.Arrays;
-
 /**
  * Created by shamil on 03.10.2017
- * */
+ */
 
-//simple array tricks #9
+//simple array tricks #10
 public class Main {
-    //    private static DecimalFormat df2 = new DecimalFormat(".##");
+
     public static void main(String[] args) {
-        int n = 10;
-        int[] arr1 = new int[n];
-        int[] arr2 = new int[n];
-        int an = 0;
-        double[] arr3 = new double[n];
+        int n = 11;
+        int a1=-1, m1=0;
+        int a2=0, m2=0;
+        int a3 = 1, m3=0;
+        int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            arr1[i] = (int) Math.floor(Math.random() * 9 + 1);
-            arr2[i] = (int) Math.floor(Math.random() * 9 + 1);
-            arr3[i] = (double) arr1[i] / arr2[i];
-            if (arr3[i] % 1 == 0) {
-                an++;
-            }
-//            arr3[i] = df2.format((double)arr3[i]);
-
+            arr[i] = (int) Math.floor(Math.random() * 3 - 1);
+            System.out.print(arr[i]+" ");
         }
-//        for (int i = 0; i < n; i++) {
-//            System.out.print(arr1[i] + " ");
-//            if (i == n - 1) {
-//                System.out.println();
-//            }
-//            System.out.print(arr2[i] + " ");
-//            if (i == n - 1) {
-//                System.out.println();
-//            }
-//            System.out.print(arr3[i] + " ");
-//            if (i == n - 1) {
-//                System.out.println();
-//            }
-//        }
-
-        System.out.print(Arrays.toString(arr1));
+        for (int i=0;i<n;i++){
+           if (arr[i]==a1){
+              m1++;
+           }
+           else if (arr[i]==a2){
+               m2++;
+           }
+           else
+               m3++;
+        }
         System.out.println();
-        System.out.print(Arrays.toString(arr2));
-        System.out.println();
-        System.out.print(Arrays.toString(arr3));
-        System.out.println();
-        System.out.print(an);
-
+        if (m1>m2 && m1>m3){
+            System.out.print("-1 | "+m1);
+        }
+        else if(m2>m1 && m2>m3){
+            System.out.print("0 | "+m2);
+        }
+        else if (m3>m1 && m3>m2){
+            System.out.print("1 | "+m3);
+        }
+        else
+            System.out.print("We have equal numbers");
     }
 
 
