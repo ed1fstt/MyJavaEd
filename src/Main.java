@@ -1,6 +1,6 @@
 
 /**
- * Created by shamil on 22.10.2017
+ * Created by shamil on 23.10.2017
  */
 //array sorting example
 public class Main {
