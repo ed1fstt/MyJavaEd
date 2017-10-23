@@ -1,61 +1,43 @@
-import java.util.Scanner;
 
 /**
- * Created by shamil on 07.10.2017
+ * Created by shamil on 22.10.2017
  */
-//simple array tricks #13
+//array sorting example
 public class Main {
-    private static int getRandomValue(int ext) {
+    private static int getRandomValue(int ext){
         int a = 0;
-        a = (int) Math.floor(Math.random() * (ext + 1));
-        return a;
+        a = (int)Math.floor(Math.random()*(ext+1));
+        return  a;
     }
-
     public static void main(String[] args) {
-        int n = 0;
-        boolean fin = false;
-//        int[] evenn = new int[];
-
-        do {
-            System.out.println("Please, enter natural number greater then number 3");
-            Scanner sc = new Scanner(System.in);
-            if (sc.hasNextInt()) {
-                int a = sc.nextInt();
-                if (a > 3) {
-                    n = a;
-//                    System.out.print(" " + n);
-//                    System.out.println();
-                    int[] arr = new int[n];
-                    int k=0;
-                    for (int i = 0; i < arr.length; i++) {
-                        arr[i] = getRandomValue(n);
-                        System.out.print(arr[i] + " ");
-                        if(arr[i]%2==0){
-                            k++;
-                        }
-                    }
-                    System.out.println();
-                    if (k>0) {
-                        int lt = 0; //it's index for even numbers array
-                        int[] evenn = new int[k];
-                        for (int i=0;i<arr.length;i++){
-                            if(arr[i]%2==0){
-                                evenn[lt]=arr[i];
-                                lt++;
-                            }
-                        }
-                        for (int i = 0; i < evenn.length; i++) {
-                            System.out.print(evenn[i] + " ");
-                        }
-                    }
-                    fin = true;
-                } else {
-                    System.out.println("Error, enter correct value: natural number greater then number 3");
-                }
-            } else {
-                System.out.println("Error,enter correct value");
-            }
+        //array initialization
+        int[] a = new int[10];
+        for(int i =0;i<a.length;i++){
+            a[i] =getRandomValue(10);
+            System.out.print(a[i]+" ");
         }
-        while (fin == false);
+        //array sorting
+        for (int i=0;i<a.length;i++){
+            int min = a[i];
+            int imin = i;
+            for (int j=i+1;j<a.length;j++){
+                if(a[j]<min){
+                    min = a[j];
+                    imin = j;
+                }
+            }
+            if (i!=imin){
+                int temp = a[i];
+                a[i] = a[imin];
+                a[imin] = temp;
+            }
+
+        }
+        System.out.println();
+        //array output
+        for(int i=0;i<a.length;i++){
+            System.out.print(a[i]+" ");
+        }
+
     }
 }
