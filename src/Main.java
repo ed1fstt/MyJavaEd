@@ -4,7 +4,7 @@ import sun.org.mozilla.javascript.internal.regexp.SubString;
  * Created by shamil on 24.10.2017.
  */
 
-//2 dimensional array init with random numbers from [-99;99]
+//2 (7x4)dimensional array init with random numbers from [-5;5]
 public class Main {
 
     private static int getRandomValue() {
