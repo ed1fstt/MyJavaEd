@@ -12,7 +12,7 @@ public class Main {
         a = (int) Math.floor(Math.random() * 90 + 10);
         return a;
     }
-    
+
     public static void main(String[] args) {
         int[][] da = new int[8][5];
         for (int i = 0; i < da.length; i++) {
