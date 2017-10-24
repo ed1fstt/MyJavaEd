@@ -1,40 +1,23 @@
 
 /**
- * Created by shamil on 23.10.2017
+ * Created by shamil on 24.10.2017
  */
-//bubble sorting in simple array exemple
+//multidimensional array example
 public class Main {
 
     public static void main(String[] args) {
-        int[] a = new int[10];
-        for (int i = 0; i < a.length; i++) {
-            a[i] = getRandomValue(10);
-            System.out.print(a[i] + " ");
-        }
-
-        for (int i = a.length - 1; i >= 2; i--) {
-            boolean sorted = true;
-            for (int j = 0; j < i; j++) {
-                if (a[j] > a[j + 1]) {
-                    int temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                    sorted = false;
-                }
-            }
-            if (sorted) {
-                break;
+        int[][] da = new int[6][4];
+        for (int i=0;i<da.length;i++){
+            for (int j=0;j<da[i].length;j++){
+                da[i][j] = (int)(Math.random()*10);
             }
         }
-        System.out.println();
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
-        }
-    }
 
-    private static int getRandomValue(int i) {
-        int a = 0;
-        a = (int) Math.floor(Math.random() * i + 1);
-        return a;
+        for (int i=0;i<da.length;i++){
+            for (int j=0;j<da[i].length;j++){
+                System.out.print(da[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 }
