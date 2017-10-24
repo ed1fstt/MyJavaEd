@@ -36,7 +36,14 @@ public class Main {
                     }
                     System.out.println();
                     if (k>0) {
+                        int lt = 0; //it's index for even numbers array
                         int[] evenn = new int[k];
+                        for (int i=0;i<arr.length;i++){
+                            if(arr[i]%2==0){
+                                evenn[lt]=arr[i];
+                                lt++;
+                            }
+                        }
                         for (int i = 0; i < evenn.length; i++) {
                             System.out.print(evenn[i] + " ");
                         }
