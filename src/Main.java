@@ -1,37 +1,27 @@
-import sun.org.mozilla.javascript.internal.regexp.SubString;
-
 /**
- * Created by shamil on 24.10.2017.
+ * Created by shamil on 01.11.2017.
  */
 
-//2 (7x4)dimensional array init with random numbers from [-5;5]
+//4 (6x7)dimensional array init with random numbers from [0;9]
 public class Main {
-
     private static int getRandomValue() {
         int a = 0;
-        a = (int) Math.floor(Math.random() * 199 -99);
+        a = (int) Math.floor(Math.random() * 10);
         return a;
     }
-
     public static void main(String[] args) {
-        int maxv = -99;
-        int[][] da = new int[5][8];
+        int[][] da = new int[6][7];
         for (int i = 0; i < da.length; i++) {
             for (int j = 0; j < da[i].length; j++) {
                 da[i][j] = getRandomValue();
-                if (da[i][j]>=maxv){
-                    maxv = da[i][j];
-                }
             }
         }
-
         for (int i = 0; i < da.length; i++) {
             for (int j = 0; j < da[i].length; j++) {
                 System.out.print(da[i][j] + " ");
             }
             System.out.println();
         }
-        System.out.print(maxv);
-
+        System.out.println();
     }
 }
