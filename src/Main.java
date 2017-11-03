@@ -23,13 +23,23 @@ public class Main {
             System.out.println();
         }
         System.out.println();
+<<<<<<< Updated upstream
 
         for (int i=0;i<da.length;i++){
             int maxValue =-1;
+=======
+        //new array sorting
+       // int[] aMaxValue = new int[6];
+        //int indexMaxValue = -1;
+        for(int i=0;i<da.length;i++){
+            //if (da[i]>maxValue){}
+            int maxValue = -1;
+>>>>>>> Stashed changes
             int indexOfMaxValue = -1;
             for (int j=0;j<da[i].length;j++){
                 if (da[i][j]>maxValue){
                     maxValue = da[i][j];
+<<<<<<< Updated upstream
                     indexOfMaxValue = j;
                 }
             }
@@ -50,5 +60,13 @@ public class Main {
             }
             System.out.println();
         }
+=======
+                }
+                System.out.print(da[i][j]+" ");
+            }
+        }
+
+
+>>>>>>> Stashed changes
     }
 }
