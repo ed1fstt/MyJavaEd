@@ -23,5 +23,32 @@ public class Main {
             System.out.println();
         }
         System.out.println();
+
+        for (int i=0;i<da.length;i++){
+            int maxValue =-1;
+            int indexOfMaxValue = -1;
+            for (int j=0;j<da[i].length;j++){
+                if (da[i][j]>maxValue){
+                    maxValue = da[i][j];
+                    indexOfMaxValue = j;
+                }
+            }
+            int tempDa = -1;
+            if (indexOfMaxValue!=0){
+                tempDa = da[i][0];
+                da[i][0] = maxValue;
+                da[i][indexOfMaxValue] =tempDa;
+            }
+//            System.out.print(maxValue+" "+indexOfMaxValue);
+//            System.out.println();
+        }
+      //  System.out.println();
+
+        for (int i=0;i<da.length;i++){
+            for(int j=0;j<da[i].length;j++){
+                System.out.print(da[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 }
