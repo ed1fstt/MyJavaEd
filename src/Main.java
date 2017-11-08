@@ -1,54 +1,66 @@
-/**
- * Created by shamil on 01.11.2017.
- */
+//*** Created by shamil on 04.11.2017.
 
-//4 (6x7)dimensional array init with random numbers from [0;9]
+
+//multiplicational array
 public class Main {
     private static int getRandomValue() {
         int a = 0;
-        a = (int) Math.floor(Math.random() * 10);
+        a = (int) Math.floor(Math.random() * 9);
         return a;
     }
+
+    private static int getRandomIndex() {
+        int b = 0;
+        b = (int) Math.floor(Math.random() * 8);
+        return b;
+    }
+
     public static void main(String[] args) {
-        int[][] da = new int[6][7];
-        for (int i = 0; i < da.length; i++) {
-            for (int j = 0; j < da[i].length; j++) {
-                da[i][j] = getRandomValue();
+        //**********initialize mult array****************
+        int[][] aMult = new int[8][8];
+        String[][] aMultString = new String[8][8];
+        int[] aTask = new int[15];
+        String[] aTaskString = new String[15];
+        for (int i = 0; i < aTask.length; i++) {
+            aTask[i] = -1;
+        }
+        for (int i = 0; i < aMult.length; i++) {
+            for (int j = 0; j < aMult[i].length; j++) {
+                aMult[i][j] = (i + 2) * (j + 2);
+                aMultString[i][j]=(i + 2) +"*"+ (j + 2);
             }
         }
-        for (int i = 0; i < da.length; i++) {
-            for (int j = 0; j < da[i].length; j++) {
-                System.out.print(da[i][j] + " ");
+        for (int i = 0; i < aMult.length; i++) {
+            for (int j = 0; j < aMult[i].length; j++) {
+                System.out.print(aMult[i][j] + " ");
             }
             System.out.println();
         }
-        System.out.println();
-
-        for (int i=0;i<da.length;i++){
-            int maxValue =-1;
-            int indexOfMaxValue = -1;
-            for (int j=0;j<da[i].length;j++){
-                if (da[i][j]>maxValue){
-                    maxValue = da[i][j];
-                    indexOfMaxValue = j;
+        //**********fill array with unique values
+        int n = 0;
+        while (n != 15) {
+            int temp = 0;
+            int indexOfi =getRandomIndex();
+            int indexOfj =getRandomIndex();
+            temp = aMult[indexOfi][indexOfj];
+            for (int i = 0; i < aTask.length; i++) {
+                if (aTask[i] == temp) {
+                    temp = 0;
                 }
             }
-            int tempDa = -1;
-            if (indexOfMaxValue!=0){
-                tempDa = da[i][0];
-                da[i][0] = maxValue;
-                da[i][indexOfMaxValue] =tempDa;
+            if (temp != 0) {
+                aTask[n] = temp;
+                aTaskString[n] =aMultString[indexOfi][indexOfj];
+                n++;
             }
-//            System.out.print(maxValue+" "+indexOfMaxValue);
-//            System.out.println();
         }
-      //  System.out.println();
-
-        for (int i=0;i<da.length;i++){
-            for(int j=0;j<da[i].length;j++){
-                System.out.print(da[i][j]+" ");
-            }
-            System.out.println();
+        System.out.println();
+        for (int i = 0; i < aTask.length; i++) {
+            System.out.print(aTask[i] + " ");
+        }
+        System.out.println();
+        for(int i=0; i<aTaskString.length;i++){
+            System.out.print(aTaskString[i]+" ");
         }
     }
 }
